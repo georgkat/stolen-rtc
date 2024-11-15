@@ -2,8 +2,8 @@ let localStream;
 let remoteStream;
 let peerConnection;
 let socket;
-let makingOffer = true;
-let polite = true
+let makingOffer = false;
+let polite = false
 
 let init = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({
