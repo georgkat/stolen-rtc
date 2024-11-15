@@ -2,13 +2,13 @@ let localStream;
 let remoteStream;
 let peerConnection;
 let socket;
-let makingOffer = false;
-let polite = false
+let makingOffer = true;
+let polite = true
 
 let init = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: false,
+    audio: true,
   });
   document.getElementById("user-1").srcObject = localStream;
   await connect(createAndSendOffer);
@@ -16,7 +16,7 @@ let init = async () => {
 
 let connect = async (callback) => {
   let roomName = window.location.pathname.split("/")[1];
-  socket = new WebSocket(`ws://localhost:8000/ws/${roomName}"`);
+  socket = new WebSocket(`ws://localhost:8001/ws/${roomName}"`);
   socket.onopen = async (_) =>  {
     await callback()
   };
