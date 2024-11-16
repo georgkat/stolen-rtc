@@ -28,7 +28,7 @@ let handleMessage = async ({ data }) => {
   data = JSON.parse(data);
   if (data["type"] == "USER_JOIN") {
     debugger
-    polite = false
+    polite = true
     createAndSendOffer();
   }
   if (data["type"] === "OFFER") {
@@ -85,23 +85,35 @@ let handlePerfectNegotiation = async ({ message }) => {
 };
 
 const config = {
-  iceServers: [
-    {
-      urls: [
-        "stun:stun.l.google.com:19302",
-        "stun:stun.l.google.com:5349",
-        "stun:stun1.l.google.com:3478",
-        "stun:stun1.l.google.com:5349",
-        "stun:stun2.l.google.com:19302",
-        "stun:stun2.l.google.com:5349",
-        "stun:stun3.l.google.com:3478",
-        "stun:stun3.l.google.com:5349",
-        "stun:stun4.l.google.com:19302",
-        "stun:stun4.l.google.com:5349"
-      ],
-    },
-  ],
+  iceServers:
+    [
+        {
+            urls: 'turn:openrelay.metered.ca:80',
+            username: 'openrelayproject',
+            credentials: 'openrelayproject'
+        }
+    ],
 };
+
+
+//const config = {
+//  iceServers: [
+//    {
+//      urls: [
+//        "stun:stun.l.google.com:19302",
+//        "stun:stun.l.google.com:5349",
+//        "stun:stun1.l.google.com:3478",
+//        "stun:stun1.l.google.com:5349",
+//        "stun:stun2.l.google.com:19302",
+//        "stun:stun2.l.google.com:5349",
+//        "stun:stun3.l.google.com:3478",
+//        "stun:stun3.l.google.com:5349",
+//        "stun:stun4.l.google.com:19302",
+//        "stun:stun4.l.google.com:5349"
+//      ],
+//    },
+//  ],
+//};
 
 //const config = {
 //  iceServers: [
