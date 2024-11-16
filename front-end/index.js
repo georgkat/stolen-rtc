@@ -28,7 +28,7 @@ let handleMessage = async ({ data }) => {
   data = JSON.parse(data);
   if (data["type"] == "USER_JOIN") {
     debugger
-    polite = true
+    polite = false
     createAndSendOffer();
   }
   if (data["type"] === "OFFER") {
