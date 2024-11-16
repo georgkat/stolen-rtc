@@ -35,7 +35,7 @@ def get_lobby(request: Request):
     return templates.TemplateResponse(request=request, name="lobby.html")
 
 @app.websocket("/ws/{client_id}")
-async def connet_websocket(websocket: WebSocket, client_id: str):
+async def connect_websocket(websocket: WebSocket, client_id: str):
     await meeting_manager.join(client_id, websocket)
     try:
         while True:
