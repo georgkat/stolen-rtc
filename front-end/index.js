@@ -16,7 +16,7 @@ let init = async () => {
 
 let connect = async (callback) => {
   let roomName = window.location.pathname.split("/")[1];
-      socket = new WebSocket("ws://63.250.47.203:8001/ws/${roomName}");
+      socket = new WebSocket("wss://63.250.47.203:8001/ws/${roomName}");
   socket.onopen = async (_) =>  {
     await callback()
   };
@@ -87,6 +87,13 @@ let handlePerfectNegotiation = async ({ message }) => {
 const config = {
   iceServers:
     [
+//        {
+//        "username": "speaksym3",
+//        "credential": "speaksym4",
+//        "urls": "turn:speakyourmind.help:3478?transport=udp"
+//
+//
+//        }
             {
 
       "username": "dc2d2894d5a9023620c467b0e71cfa6a35457e6679785ed6ae9856fe5bdfa269",
