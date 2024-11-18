@@ -17,7 +17,7 @@ let init = async () => {
 let connect = async (callback) => {
   let roomName = window.location.pathname.split("/")[1];
       console.log(roomName);
-      socket = new WebSocket("wss://63.250.47.203:8001/ws/${roomName}");
+      socket = new WebSocket("wss://www.speakyourmind.help:8001/ws/${roomName}");
   socket.onopen = async (_) =>  {
     await callback()
   };
