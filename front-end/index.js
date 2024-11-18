@@ -16,6 +16,7 @@ let init = async () => {
 
 let connect = async (callback) => {
   let roomName = window.location.pathname.split("/")[1];
+      console.log(roomName);
       socket = new WebSocket("wss://63.250.47.203:8001/ws/${roomName}");
   socket.onopen = async (_) =>  {
     await callback()
@@ -94,6 +95,29 @@ const config = {
 //
 //
 //        }
+    {
+        urls: "stun:stun.relay.metered.ca:80",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:80",
+        username: "ea7a2dbc67c292e12977de74",
+        credential: "qLRk6KNx+3JV5pIp",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:80?transport=tcp",
+        username: "ea7a2dbc67c292e12977de74",
+        credential: "qLRk6KNx+3JV5pIp",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:443",
+        username: "ea7a2dbc67c292e12977de74",
+        credential: "qLRk6KNx+3JV5pIp",
+      },
+      {
+        urls: "turns:global.relay.metered.ca:443?transport=tcp",
+        username: "ea7a2dbc67c292e12977de74",
+        credential: "qLRk6KNx+3JV5pIp",
+      },
             {
 
       "username": "dc2d2894d5a9023620c467b0e71cfa6a35457e6679785ed6ae9856fe5bdfa269",
