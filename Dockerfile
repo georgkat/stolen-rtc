@@ -17,4 +17,4 @@ COPY ./. /code/.
 CMD ["cd", "code"]
 
 #
-CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["uvicorn", "app:app", "--reload", "--host", "0.0.0.0", "--port", "8001"]
