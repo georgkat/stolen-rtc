@@ -5,6 +5,17 @@
 {% endblock %}
 {% block content %}
     <div id="videos">
+        <label for="fullscreen">
+            <span>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.33398 10.9919V8.0752C2.33398 5.1702 4.67898 2.8252 7.58398 2.8252H10.5007" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17.501 2.8252H20.4176C23.3226 2.8252 25.6676 5.1702 25.6676 8.0752V10.9919" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M25.667 19.1582V20.9082C25.667 23.8132 23.322 26.1582 20.417 26.1582H18.667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.5007 26.1589H7.58398C4.67898 26.1589 2.33398 23.8139 2.33398 20.9089V17.9922" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>                
+            </span>
+            <input type="checkbox" id="fullscreen">
+        </label>
         <video class="video-player" id="user-1" autoplay muted></video>
         <video class="video-player" id="user-2" autoplay></video>
     </div>
