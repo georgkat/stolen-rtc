@@ -261,3 +261,75 @@ footer a:hover {
     color: #ffffff;
     opacity: 0.7;
 }
+
+@media (max-width: 767px) {
+    body {
+        background-color: #2e2e2e;
+    }
+
+    #videos {
+        margin-top: 75px;
+    }
+
+    #videos:has(input:checked) {
+        margin-top: 0;
+    }
+
+    #videos:has(input:checked) #user-1 {
+        bottom: 8px;
+    }
+
+    #videos:has(input:checked) + .controls .timer {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 8px;
+    }
+
+    #user-1 {
+        bottom: -64px;
+        right: 8px;
+        width: 100px;
+        height: 150px;
+    }
+
+    #user-2 {
+        min-height: 240px;
+    }
+
+    .controls {
+        padding-right: 0;
+    }
+
+    .timer {
+        position: absolute;
+        top: 26px;
+        right: 8px;
+    }
+    
+    .leave-btn {
+        min-width: 64px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        z-index: 100;
+    }
+    
+    .leave-btn span {
+        display: none;
+    }
+
+    footer .container {
+        gap: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header, footer {
+        padding: 16px 0;
+    }
+
+    .info {
+        padding: 20px;
+    }
+}
+ 
